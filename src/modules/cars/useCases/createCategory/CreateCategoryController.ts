@@ -8,6 +8,7 @@ class CreateCategoryController {
     const { name, description } = request.body;
 
     const createCategoryService = container.resolve(CreateCategoryService);
+
     await createCategoryService.execute({ name, description });
 
     return response.status(201).send();
