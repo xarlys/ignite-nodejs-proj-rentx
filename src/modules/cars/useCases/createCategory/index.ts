@@ -1,4 +1,4 @@
-import { CategoriesRepository } from "../../repositories/implementations/CategoriesRepository";
+/* import { CategoriesRepository } from "../../repositories/implementations/CategoriesRepository";
 import { CreateCategoryController } from "./CreateCategoryController";
 import { CreateCategoryService } from "./CreateCategoryService";
 
@@ -12,7 +12,7 @@ export default (): CreateCategoryController => {
   );
 
   return createCategoryController;
-};
+}; */
 
 /* const categoriesRepository = CategoriesRepository.getInstance();
 
