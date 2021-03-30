@@ -14,9 +14,9 @@ const createCategoryController = new CreateCategoryController();
 const importCategoryController = new ImportCategoryController();
 const listCategoriesController = new ListCategoriesController();
 
-categoriesRouter.get("/", listCategoriesController.handle);
-
 categoriesRouter.post("/", createCategoryController.handle);
+
+categoriesRouter.get("/", listCategoriesController.handle);
 
 categoriesRouter.post(
   "/import",

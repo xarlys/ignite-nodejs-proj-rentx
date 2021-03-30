@@ -9,9 +9,9 @@ class ListSpecificationsController {
       ListSpecificationsService
     );
 
-    await listSpecificationsService.execute();
+    const specifications = await listSpecificationsService.execute();
 
-    return response.status(200).json(listSpecificationsService);
+    return response.status(200).json(specifications);
   }
 }
 
