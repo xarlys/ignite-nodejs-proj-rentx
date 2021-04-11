@@ -20,20 +20,18 @@ class CreateCarSpecificationUseCase {
     car_id,
     specifications_id,
   }: IListCarSpecificationDTO): Promise<Car> {
-    console.log(car_id);
+    // console.log(car_id);
     const carExists = await this.carsRepository.findById(car_id);
 
     if (!carExists) {
       throw new AppError("Cars does not exists!");
     }
 
-    console.log(carExists);
     const specifications = await this.specificationsRepository.findByIds(
       specifications_id
     );
 
     carExists.specifications = specifications;
-    console.log(specifications);
 
     await this.carsRepository.create(carExists);
 

@@ -25,6 +25,7 @@ class CreateRentalUseCase {
     expected_return_date,
   }: ICreateRentalDTO): Promise<Rental> {
     const minimumHour = 24;
+
     const carUnavailable = await this.rentalsRepository.findOpenRentalByCar(
       car_id
     );
@@ -38,7 +39,7 @@ class CreateRentalUseCase {
     );
 
     if (rentalOpenToUser) {
-      throw new AppError("There's a rental in progress for user!");
+      throw new AppError("There's a rental in progress for user");
     }
 
     const dateNow = this.dayjsDateProvider.dateNow();

@@ -11,7 +11,7 @@ class AuthenticateUserController {
 
     const authenticate = await authenticateUser.execute({ email, password });
 
-    return response.status(201).json(authenticate);
+    return response.status(200).json(authenticate);
   }
 }
 
