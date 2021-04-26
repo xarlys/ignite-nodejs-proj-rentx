@@ -33,8 +33,8 @@ describe("Create a new Category", () => {
 
   it("shold not be able to create a new category with name exists", async () => {
     const category = {
-      name: "Category Test",
-      description: "Create Category Test",
+      name: "Category Exists Test",
+      description: "Create Exists Category Test",
     };
 
     await createCategoryService.execute({
