@@ -13,6 +13,7 @@ import { router } from "./routes";
 // import "@shared/infra/typeorm";
 
 import "@shared/container";
+import upload from "@config/upload";
 
 createConnection();
 const app = express();
@@ -20,6 +21,10 @@ const app = express();
 app.use(express.json());
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
+
+//pegar foto perfil de forma estatica
+app.use("/avatar", express.static(`${upload.tmpFolder}/avatar`));
+app.use("/cars", express.static(`${upload.tmpFolder}/cars`));
 
 app.use(router);
 
